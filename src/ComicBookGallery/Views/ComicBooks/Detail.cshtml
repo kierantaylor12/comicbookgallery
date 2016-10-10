@@ -1,16 +1,8 @@
 ﻿@{
-    Layout = null; // templates set in the layout view
+    Layout = "~/Views/Shared/_Layout.cshtml"; // templates set in the layout view
+    ViewBag.Title = "Comic Book Detail";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
     <h1>@ViewBag.SeriesTitle</h1>
     <h2>Issue number: @ViewBag.IssueNumber</h2>
 
@@ -26,8 +18,5 @@
             @artist
                 </li>
         }</ul>
-        </div>
-        }
     </div>
-</body>
-</html>
+        }
