@@ -31,13 +31,12 @@ namespace ComicBookGallery.Controllers // example localhost/ComicBooks
 
             if(id > comicBookTotals.Length) // whilst the ID entered into the detail parameters is equal to more than the length of the array, throw a httpnotfound page.
             {
-                return HttpNotFound();
+                return HttpNotFound("The Comic ID you entered was not found!");
             }
 
-            if (id == null)
+            while (id == null)
             {
-                return HttpNotFound();
-                              
+                return HttpNotFound("Sorry this destination was not found!");                     
             }
 
             var comicBook = _comicBookRepository.GetComicBook(id.Value);
