@@ -27,13 +27,21 @@ namespace ComicBookGallery.Controllers // example localhost/ComicBooks
 
         public ActionResult Detail(int? id) // action method, example localhost/ComicBooks/Detail
         {
-            if (id == null)
+            var comicBookTotals = _comicBookRepository.GetComicBooks();
+
+            if(id > comicBookTotals.Length) // whilst the ID entered into the detail parameters is equal to more than the length of the array, throw a httpnotfound page.
             {
                 return HttpNotFound();
             }
 
+            if (id == null)
+            {
+                return HttpNotFound();
+                              
+            }
+
             var comicBook = _comicBookRepository.GetComicBook(id.Value);
-    
+
             return View(comicBook);
         }
 
