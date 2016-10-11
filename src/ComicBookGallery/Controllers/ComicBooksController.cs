@@ -33,9 +33,9 @@ namespace ComicBookGallery.Controllers // example localhost/ComicBooks
             }
 
             var comicBook = _comicBookRepository.GetComicBook(id.Value);
-                
-            
+    
             return View(comicBook);
         }
+
     }
 }
