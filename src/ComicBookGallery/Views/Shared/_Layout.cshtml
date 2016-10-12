@@ -24,8 +24,7 @@
                     @{var input = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
                         string[] tab = input.Split('\\');
                         var result = tab[1] + "@" + tab[0]
-                      ;}
-                  
+                      ;}                
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#about">Currently logged in as: @result</a></li>
